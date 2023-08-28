@@ -48,6 +48,7 @@ footer {
 .ad-right {
     float: right;
     margin-left: 10px; /* Add some spacing between ads */
+    transform: translate(100%, 100%)
 }
 
 /* Clear floats after ads to prevent layout issues */
