@@ -15,7 +15,7 @@
         }
 
         header, footer {
-            background-color: #252525;
+            background-color: #fff;
             color: #fff;
             padding: 10px;
             text-align: center;
@@ -26,6 +26,11 @@
             display: flex;
             justify-content: space-between;
             background-color: #252525;
+            border-radius: 15px;
+        }
+
+        button {
+            border: solid, white;
             border-radius: 15px;
         }
 
@@ -70,6 +75,10 @@
         document.addEventListener("DOMContentLoaded", function() {
             const generateButton = document.getElementById("generate-button");
             const generatedPassword = document.getElementById("generated-password");
+            const adLeft = document.getElementById('ad-left');
+            const adRight = document.getElementById('ad-right');
+            let adLeftLastClick = 0;
+            let adRightLastClick = 0;
 
             generateButton.addEventListener("click", function() {
                 const length = parseInt(document.getElementById("length").value);
@@ -81,39 +90,24 @@
                 generatedPassword.textContent = "Generated Password: " + characters;
             });
 
-            function generatePassword(length, useLetters, useDigits, useSpecial) {
-                let characters = "";
+            adLeft.addEventListener("click", function() {
+                adLeftLastClick = Date.now();
+            });
 
-                if (useLetters) {
-                    characters += "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                }
-                if (useDigits) {
-                    characters += "0123456789";
-                }
-                if (useSpecial) {
-                    characters += "!@#$%^&*()_-+=<>?/[]{}";
-                }
+            adRight.addEventListener("click", function() {
+                adRightLastClick = Date.now();
+            });
 
-                if (!characters) {
-                    return "Error: You must select at least one character type.";
-                }
-
-                let password = "";
-                for (let i = 0; i < length; i++) {
-                    const randomIndex = Math.floor(Math.random() * characters.length);
-                    password += characters.charAt(randomIndex);
-                }
-
-                return password;
+            function shouldRefreshAds() {
+                const currentTime = Date.now();
+                return (currentTime - adLeftLastClick > 10000) && (currentTime - adRightLastClick > 10000);
             }
 
-            // JavaScript to refresh ads
             function refreshAds() {
-                const adLeft = document.getElementById('ad-left');
-                const adRight = document.getElementById('ad-right');
-                
-                adLeft.src = adLeft.src; // Refresh the left ad
-                adRight.src = adRight.src; // Refresh the right ad
+                if (shouldRefreshAds()) {
+                    adLeft.src = adLeft.src; // Refresh the left ad
+                    adRight.src = adRight.src; // Refresh the right ad
+                }
             }
 
             // Set up timer to refresh ads every 5 seconds
