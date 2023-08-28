@@ -30,7 +30,7 @@
         }
 
         button {
-            border-style: solid, white;
+            border-style: solid;
             border-radius: 15px;
         }
 
@@ -58,7 +58,7 @@
                 <input type="checkbox" id="use-digits" name="use-digits" checked> Digits
                 <input type="checkbox" id="use-special" name="use-special" checked> Special Characters
                 <button type="button" id="generate-button">Generate Password</button>
-                <p id="generated-password"></p>
+                <p id="generated-password" style="color: white;"></p>
             </form>
         </section>
     </main>
@@ -116,7 +116,7 @@
             }
 
             // Set up timer to refresh ads every 5 seconds
-            setInterval(refreshAds, 10000); // 5000 milliseconds = 5 seconds
+            setInterval(refreshAds, 10000); // 10000 milliseconds = 10 seconds
             
             function generatePassword(length, useLetters, useDigits, useSpecial) {
                 let characters = "";
@@ -143,7 +143,6 @@
 
                 return password;
             }
-        });
         });
     </script>
 </body>
