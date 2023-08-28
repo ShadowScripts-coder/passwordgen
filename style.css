@@ -42,7 +42,7 @@ footer {
 .ad-left {
     float: left;
     margin-right: 10px; /* Add some spacing between ads */
-    transform: translate(0%, 100%)
+    transform: translateX(0%)
     border-radius: 10px;
 }
 
@@ -50,6 +50,6 @@ footer {
 .ad-right {
     float: right;
     margin-left: 10px; /* Add some spacing between ads */
-    transform: translate(100%, 100%)
+    transform: translateX(100%)
     border-radius: 10px;
 }
