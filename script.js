@@ -44,20 +44,10 @@ function refreshAds() {
     const adLeft = document.getElementById('ad-left');
     const adRight = document.getElementById('ad-right');
     
-    if (!adLeft.clicked && !adRight.clicked) {
-        adLeft.src = adLeft.src; // Refresh the left ad
-        adRight.src = adRight.src; // Refresh the right ad
-    }
+    adLeft.src = adLeft.src; // Refresh the left ad
+    adRight.src = adRight.src; // Refresh the right ad
 }
 
 // Set up timer to refresh ads every 5 seconds
 setInterval(refreshAds, 5000); // 5000 milliseconds = 5 seconds
-
-// Event listener to track ad clicks
-document.getElementById('ad-left').addEventListener('click', function() {
-    this.clicked = true;
-});
-
-document.getElementById('ad-right').addEventListener('click', function() {
-    this.clicked = true;
 });
