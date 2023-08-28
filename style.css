@@ -43,6 +43,7 @@ footer {
     float: left;
     margin-right: 10px; /* Add some spacing between ads */
     transform: translate(0%, 100%)
+    border-radius: 10px;
 }
 
 /* Style for the right ad */
@@ -50,4 +51,5 @@ footer {
     float: right;
     margin-left: 10px; /* Add some spacing between ads */
     transform: translate(100%, 100%)
+    border-radius: 10px;
 }
