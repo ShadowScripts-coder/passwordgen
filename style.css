@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header, footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#password-generator, #ad {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 0 10px;
+}
+
+#password-generator h2, #ad h2 {
+    margin-top: 0;
+}
+
+#generate-button {
+    margin-top: 10px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.ad-content {
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    text-align: center;
+}
