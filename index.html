@@ -116,7 +116,34 @@
             }
 
             // Set up timer to refresh ads every 5 seconds
-            setInterval(refreshAds, 5000); // 5000 milliseconds = 5 seconds
+            setInterval(refreshAds, 10000); // 5000 milliseconds = 5 seconds
+            
+            function generatePassword(length, useLetters, useDigits, useSpecial) {
+                let characters = "";
+
+                if (useLetters) {
+                    characters += "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                }
+                if (useDigits) {
+                    characters += "0123456789";
+                }
+                if (useSpecial) {
+                    characters += "!@#$%^&*()_-+=<>?/[]{}";
+                }
+
+                if (!characters) {
+                    return "Error: You must select at least one character type.";
+                }
+
+                let password = "";
+                for (let i = 0; i < length; i++) {
+                    const randomIndex = Math.floor(Math.random() * characters.length);
+                    password += characters.charAt(randomIndex);
+                }
+
+                return password;
+            }
+        });
         });
     </script>
 </body>
